@@ -59,10 +59,10 @@ LLM judge: Google `gemini-3.1-flash-lite` (`JUDGE_MODEL`).
 
 ## External references
 ```
-# SOURCE: StockCharts ChartSchool, "Relative Strength Index (RSI)" worked example — closing prices and expected RSI values -> tests/test_indicators.py
-# SOURCE: J. Welles Wilder, "New Concepts in Technical Trading Systems" (1978) — RSI smoothing definition -> task1_financial/indicators.py
-# SOURCE: John Bollinger, "Bollinger on Bollinger Bands" (2001) — population standard deviation for bands -> task1_financial/indicators.py
-# SOURCE: Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023) — NF4, double quantisation, lr 2e-4, max_grad_norm 0.3, all-linear-layer adapters -> task2_genai/finetune.py
+# SOURCE: StockCharts ChartSchool, "Relative Strength Index (RSI)" worked example: closing prices and expected RSI values -> tests/test_indicators.py
+# SOURCE: J. Welles Wilder, "New Concepts in Technical Trading Systems" (1978): RSI smoothing definition -> task1_financial/indicators.py
+# SOURCE: John Bollinger, "Bollinger on Bollinger Bands" (2001): population standard deviation for bands -> task1_financial/indicators.py
+# SOURCE: Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023): NF4, double quantisation, lr 2e-4, max_grad_norm 0.3, all-linear-layer adapters -> task2_genai/finetune.py
 # SOURCE: Zhang et al., "BERTScore: Evaluating Text Generation with BERT" (2020) via the bert-score package -> task2_genai/evaluation.py
 # SOURCE: LangGraph documentation, StateGraph / add_messages / MemorySaver patterns -> task3_agentic/single_agent.py, multi_agent.py
 ```

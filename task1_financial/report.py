@@ -21,14 +21,14 @@ CHART_LOOKBACK_DAYS = 252
 TOP_HEADLINES = 3
 CHART_DPI = 130
 
-MARKDOWN_TEMPLATE = Template("""# {{ s.company_name }} ({{ s.ticker }}) — Equity Research Brief
+MARKDOWN_TEMPLATE = Template("""# {{ s.company_name }} ({{ s.ticker }}): Equity Research Brief
 *As of {{ s.as_of }} · Generated {{ generated }}*
 
 ## Company Snapshot
 | Metric | Value |
 |---|---|
 | Price | {{ s.current_price }} {{ s.currency or "" }} |
-| 52-week range | {{ s.low_52w }} – {{ s.high_52w }} |
+| 52-week range | {{ s.low_52w }} to {{ s.high_52w }} |
 | YTD return | {{ pct(s.ytd_return) }} |
 | P/E ({{ s.pe_type or "n/a" }}) | {{ s.pe_ratio if s.pe_ratio is not none else "n/a" }} |
 | Sector | {{ s.sector or "n/a" }} |
@@ -41,8 +41,8 @@ Momentum score **{{ s.momentum_signal.score }}** ({{ s.momentum_signal.label }})
 {{ chart }}
 
 ## News Sentiment
-Aggregate score **{{ "%+.2f"|format(a.sentiment.score) }}** ({{ a.sentiment.label }}) from {{ a.sentiment.n_scored }} headlines
-— {{ a.sentiment.counts.positive }} positive, {{ a.sentiment.counts.neutral }} neutral, {{ a.sentiment.counts.negative }} negative.
+Aggregate score **{{ "%+.2f"|format(a.sentiment.score) }}** ({{ a.sentiment.label }}) from {{ a.sentiment.n_scored }} headlines:
+{{ a.sentiment.counts.positive }} positive, {{ a.sentiment.counts.neutral }} neutral, {{ a.sentiment.counts.negative }} negative.
 
 | Headline | Sentiment | Confidence | Reason |
 |---|---|---|---|
@@ -87,7 +87,7 @@ def render_chart(pipeline: PipelineResult) -> str:
     ax_price.plot(df.index, df["Close"], color="#1b2430", lw=1.4, label="Close")
     ax_price.plot(df.index, df[SMA_SHORT_COL], color="#d9822b", lw=1.1, label="SMA 50")
     ax_price.plot(df.index, df[SMA_LONG_COL], color="#1f4e79", lw=1.1, label="SMA 200")
-    ax_price.set_title(f"{pipeline.ticker} — price, trend and volatility bands (1 year)", loc="left", fontsize=11)
+    ax_price.set_title(f"{pipeline.ticker}: price, trend and volatility bands (1 year)", loc="left", fontsize=11)
     ax_price.legend(loc="upper left", fontsize=8, frameon=False, ncol=4)
 
     ax_rsi.plot(df.index, df[RSI_COL], color="#6a4c93", lw=1.1)

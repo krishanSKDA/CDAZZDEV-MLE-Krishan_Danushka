@@ -1,15 +1,15 @@
-# CDAZZDEV — Senior ML Engineer Assessment
+# CDAZZDEV: Senior ML Engineer Assessment
 
 All three tasks are implemented: **Financial AI**, **Generative AI fine-tuning**, and **Agentic workflows**.
 
 | Task | Folder | Notebook(s) | Key deliverable |
 |---|---|---|---|
-| 1 — Equity research assistant | [task1_financial](task1_financial/) | [Task1_Equity_Research.ipynb](task1_financial/Task1_Equity_Research.ipynb) | Indicators from first principles, validated LLM sentiment + Buy/Hold/Sell, HTML brief |
-| 2 — Domain fine-tuning | [task2_genai](task2_genai/) | [Data](task2_genai/Task2_Data.ipynb) · [Fine-tune](task2_genai/Task2_FineTune.ipynb) · [Eval](task2_genai/Task2_Eval.ipynb) | QLoRA Qwen2.5-3B risk-factor extractor, base vs fine-tuned evaluation |
-| 3 — Multi-agent research | [task3_agentic](task3_agentic/) | [Task3_Agentic.ipynb](task3_agentic/Task3_Agentic.ipynb) | LangGraph agents, typed handoffs, critique loop, memory, `agent_trace.jsonl` |
+| 1: Equity research assistant | [task1_financial](task1_financial/) | [Task1_Equity_Research.ipynb](task1_financial/Task1_Equity_Research.ipynb) | Indicators from first principles, validated LLM sentiment + Buy/Hold/Sell, HTML brief |
+| 2: Domain fine-tuning | [task2_genai](task2_genai/) | [Data](task2_genai/Task2_Data.ipynb) · [Fine-tune](task2_genai/Task2_FineTune.ipynb) · [Eval](task2_genai/Task2_Eval.ipynb) | QLoRA Qwen2.5-3B risk-factor extractor, base vs fine-tuned evaluation |
+| 3: Multi-agent research | [task3_agentic](task3_agentic/) | [Task3_Agentic.ipynb](task3_agentic/Task3_Agentic.ipynb) | LangGraph agents, typed handoffs, critique loop, memory, `agent_trace.jsonl` |
 
 **Links**
-- Fine-tuned model (Hugging Face): `https://huggingface.co/YOUR_HF_USERNAME/qwen2.5-3b-risk-extractor`
+- Fine-tuned model (Hugging Face): `https://huggingface.co/Krishan-1890/qwen2.5-3b-risk-extractor`
 - Video walkthrough: `VIDEO_LINK`
 - [CITATIONS.md](CITATIONS.md) · [REFLECTION.md](REFLECTION.md)
 

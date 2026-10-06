@@ -1,12 +1,12 @@
-# Task 2 — Domain-Specific Fine-Tuning: Financial Risk-Factor Extraction
+# Task 2: Domain-Specific Fine-Tuning: Financial Risk-Factor Extraction
 
 | Notebook | Runtime | Colab |
 |---|---|---|
-| Task2_Data.ipynb — use case, generation, diversity, split | CPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_Data.ipynb) |
-| Task2_FineTune.ipynb — QLoRA training, merge, push | T4 GPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_FineTune.ipynb) |
-| Task2_Eval.ipynb — base vs fine-tuned, judge, manual review, RAG bonus | T4 GPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_Eval.ipynb) |
+| Task2_Data.ipynb: use case, generation, diversity, split | CPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_Data.ipynb) |
+| Task2_FineTune.ipynb: QLoRA training, merge, push | T4 GPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_FineTune.ipynb) |
+| Task2_Eval.ipynb: base vs fine-tuned, judge, manual review, RAG bonus | T4 GPU | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/krishanSKDA/CDAZZDEV-MLE-Krishan_Danushka/blob/main/task2_genai/Task2_Eval.ipynb) |
 
-**Model:** `https://huggingface.co/YOUR_HF_USERNAME/qwen2.5-3b-risk-extractor`
+**Model:** [https://huggingface.co/Krishan-1890/qwen2.5-3b-risk-extractor](https://huggingface.co/Krishan-1890/qwen2.5-3b-risk-extractor)
 
 ## Problem statement
 - **Input:** a financial-disclosure passage plus its document type.
@@ -36,7 +36,7 @@
 | `evaluation.py` | Greedy generation with perplexity, ROUGE-L, BERTScore, structural/grounding metrics, LLM judge, manual review |
 | `rag_fallback.py` | Bonus: perplexity-gated ChromaDB retrieval and re-query |
 
-## Appendix A — teacher system prompt (verbatim)
+## Appendix A: teacher system prompt (verbatim)
 ```
 You generate training data for a model that extracts MATERIAL risk factors from corporate financial disclosures.
 
@@ -77,7 +77,7 @@ Return a single JSON object and nothing else:
 
 Teacher user message template: `Specification:\n{spec}` (the specification is a JSON object sampled from the seed grid).
 
-## Appendix B — student system prompt (used for training and for the base-model baseline)
+## Appendix B: student system prompt (used for training and for the base-model baseline)
 ```
 You are a financial risk analyst. Extract the MATERIAL risk factors from the disclosure excerpt.
 Categories: supply_chain (supplier concentration, component shortages, logistics disruption, manufacturing capacity); regulatory_legal (regulation, litigation, export controls, antitrust, compliance failures); competition (competitive or pricing pressure, market-share loss, new entrants); customer_concentration (dependence on a few customers, distributors or channels); macroeconomic (demand cyclicality, recession, inflation, consumer or enterprise spending); fx_interest_rate (currency translation, interest-rate exposure, hedging costs); liquidity_debt (leverage, covenants, refinancing, cash burn, going-concern doubt); cybersecurity_operational (cyber incidents, IT outages, operational failures, recalls); geopolitical (trade tensions, tariffs, sanctions, conflict, country risk); technology_ip (technology obsolescence, IP disputes, R&D or product-transition execution); esg_climate (physical climate risk, transition or environmental regulation, ESG controversies); key_personnel (dependence on executives or scarce talent, labour relations).

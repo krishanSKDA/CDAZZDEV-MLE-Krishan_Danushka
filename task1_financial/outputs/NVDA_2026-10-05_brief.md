@@ -1,11 +1,11 @@
-# NVIDIA Corporation (NVDA) — Equity Research Brief
+# NVIDIA Corporation (NVDA): Equity Research Brief
 *As of 2026-10-05 · Generated 2026-10-06 08:56 UTC*
 
 ## Company Snapshot
 | Metric | Value |
 |---|---|
 | Price | 238.9 USD |
-| 52-week range | 163.9 – 240.1 |
+| 52-week range | 163.9 to 240.1 |
 | YTD return | +28.4% |
 | P/E (trailing) | 30.2 |
 | Sector | Technology |
@@ -24,8 +24,8 @@ Momentum score **3** (bullish).
 ![Technical chart](NVDA_2026-10-05_chart.png)
 
 ## News Sentiment
-Aggregate score **+0.51** (positive) from 10 headlines
-— 6 positive, 3 neutral, 1 negative.
+Aggregate score **+0.51** (positive) from 10 headlines:
+6 positive, 3 neutral, 1 negative.
 
 | Headline | Sentiment | Confidence | Reason |
 |---|---|---|---|
