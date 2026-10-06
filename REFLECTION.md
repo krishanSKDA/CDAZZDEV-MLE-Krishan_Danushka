@@ -29,15 +29,24 @@ volatility at the 67th percentile). Tool permissions are enforced at model bindi
 - **Library drift on Colab:** transformers v5 removed `warmup_ratio`, so I switched to integer warmup steps. Colab's
   preinstalled torchao 0.10 broke the PEFT merge, so I uninstalled it and re-ran only the merge. Both fixes are
   documented in the notebook.
-- **Evaluation:** [fill after Task 2C: base vs fine-tuned ROUGE-L, BERTScore, judge scores, manual hallucination rate].
+- **Evaluation (32 held-out passages, base vs fine-tuned):**
+
+  | Metric | Base | Fine-tuned |
+  |---|---|---|
+  | ROUGE-L | 0.60 | 0.88 |
+  | Category F1 | 0.24 | 0.94 |
+  | Verbatim-quote rate | 64% | 98% |
+  | Judge "hallucinated" | 38% | 3% |
+  | Manual hallucination rate | — | [X]% |
+
+  Remaining errors are taxonomy-boundary confusions and severity calibration (0.72).
 - **Cheapest-model trade-offs:** Flash-Lite agents often skip the reasoning text between tool calls, so replanning
   shows mainly in the trace: `get_news` errors, then the agent calls `web_search`. The same model also acts as Task 2
   teacher and judge. Self-preference bias is offset by reference-grounded checks that use no LLM.
-- **Data sources:** yfinance returned no news, so the pipeline falls back to Yahoo and Google News RSS, ranked by relevance.
+- **Data sources:** yfinance returned no news, so the pipeline falls back to RSS feeds.
 
 ## What I would improve with more time
 - **Task 1:** backtest the momentum rule and the LLM signal against forward returns, and calibrate sentiment confidence.
 - **Task 2:** add real SEC 10-K passages to the test set to measure synthetic-to-real transfer. Compare LoRA ranks
   8/16/32 and try constrained JSON decoding. Use a judge from a different family than the teacher.
-- **Task 3:** use a stronger model for planning while keeping Flash-Lite for tool-heavy steps. Add per-agent token
-  budgets, and build an evaluation suite across tickers that checks every cited risk against the trace.
+- **Task 3:** use a stronger planning model, add per-agent token budgets, and check every cited risk against the trace.
