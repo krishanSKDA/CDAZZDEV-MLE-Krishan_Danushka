@@ -43,7 +43,7 @@ python -m venv .venv && .venv/Scripts/activate      # Windows; use bin/activate 
 pip install -r requirements.txt
 pytest -q                                            # offline tests, no API key needed
 python -m task1_financial.data_pipeline NVDA         # Task 1A from the command line
-streamlit run task3_agentic/dashboard.py             # Task 3 trace dashboard
+streamlit run task3_agentic/dashboard.py             # Task 3 trace dashboard (screenshot in task3_agentic/README.md)
 ```
 
 ## Design highlights
