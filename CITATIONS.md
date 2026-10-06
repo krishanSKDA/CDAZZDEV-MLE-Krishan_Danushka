@@ -50,7 +50,12 @@ assessment. Code was generated with Claude through Claude Code, then reviewed, r
 # AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'Offline unit tests with fake LLM clients and scripted agent models', Date: 2026-10-06 -> tests/
 # AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'Thin Colab notebooks calling the task modules', Date: 2026-10-06 -> */*.ipynb
 # AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'README drafts', Date: 2026-10-06 -> README.md, */README.md
+# AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'Draft the two-paragraph qualitative analysis from the Task 2C metrics and failure cases', Date: 2026-10-06 -> task2_genai/Task2_Eval.ipynb (Qualitative analysis cell), reviewed and edited by the candidate
+# AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'Draft REFLECTION.md from the run results', Date: 2026-10-06 -> REFLECTION.md, reviewed and edited by the candidate
+# AI-ASSISTED: Claude (claude-opus-5-5) via Claude Code, Prompt: 'Capture a screenshot of the Streamlit trace dashboard', Date: 2026-10-06 -> task3_agentic/dashboard.png
 ```
+
+Manual review labels in `Task2_Eval.ipynb` (`MANUAL_LABELS`) were assigned by the candidate, not by an AI tool.
 
 ## Teacher-model data generation
 The full teacher system prompt is in [task2_genai/README.md](task2_genai/README.md#appendix-a--teacher-system-prompt-verbatim)
