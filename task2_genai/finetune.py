@@ -152,6 +152,9 @@ def build_trainer(cfg: TrainConfig, model, tokenizer, train_records: list[dict],
 
     train_ds = ListDataset([tokenize_example(tokenizer, r["messages"], cfg.max_seq_length) for r in train_records])
     val_ds = ListDataset([tokenize_example(tokenizer, r["messages"], cfg.max_seq_length) for r in val_records])
+    # integer warmup steps: transformers v5 dropped `warmup_ratio`, and an int means the same thing in v4 and v5
+    steps_per_epoch = math.ceil(len(train_ds) / (cfg.per_device_train_batch_size * cfg.gradient_accumulation_steps))
+    warmup_steps = max(1, math.ceil(cfg.warmup_ratio * steps_per_epoch * cfg.num_train_epochs))
     args = TrainingArguments(
         output_dir=output_dir,
         num_train_epochs=cfg.num_train_epochs,
@@ -160,7 +163,7 @@ def build_trainer(cfg: TrainConfig, model, tokenizer, train_records: list[dict],
         gradient_accumulation_steps=cfg.gradient_accumulation_steps,
         learning_rate=cfg.learning_rate,
         lr_scheduler_type=cfg.lr_scheduler_type,
-        warmup_ratio=cfg.warmup_ratio,
+        warmup_steps=warmup_steps,
         weight_decay=cfg.weight_decay,
         max_grad_norm=cfg.max_grad_norm,
         optim=cfg.optim,
