@@ -10,7 +10,7 @@ All three tasks are implemented: **Financial AI**, **Generative AI fine-tuning**
 
 **Links**
 - Fine-tuned model (Hugging Face): `https://huggingface.co/Krishan-1890/qwen2.5-3b-risk-extractor`
-- Video walkthrough: `VIDEO_LINK`
+- Video walkthrough (YouTube): https://youtu.be/cptu0oQJnA0
 - [CITATIONS.md](CITATIONS.md) · [REFLECTION.md](REFLECTION.md)
 
 ## Repository layout
