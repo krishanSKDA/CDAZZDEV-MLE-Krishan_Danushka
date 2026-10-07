@@ -37,7 +37,7 @@ volatility at the 67th percentile). Tool permissions are enforced at model bindi
   | Category F1 | 0.24 | 0.94 |
   | Verbatim-quote rate | 64% | 98% |
   | Judge "hallucinated" | 38% | 3% |
-  | Manual hallucination rate | — | [X]% |
+  | Manual hallucination rate | — | 3.1% |
 
   Remaining errors are taxonomy-boundary confusions and severity calibration (0.72).
 - **Cheapest-model trade-offs:** Flash-Lite agents often skip the reasoning text between tool calls, so replanning
